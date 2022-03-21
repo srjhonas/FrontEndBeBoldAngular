@@ -1,0 +1,50 @@
+<div class="container">
+
+  <h4>Panel Hacedor - Muro de Solicitudes</h4>
+  <h5 hidden>{{dataService.idUsuario}}</h5>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h5>{{dataService.nombreUsuario}}</h5>
+      </div>
+      <div class="col">
+  
+        <h5>{{dataService.emailUsuario}}</h5>
+      </div>
+      <div class="col">
+  
+        <h5>{{dataService.telefonoUsuario}}</h5>
+      </div>
+    </div>
+  </div>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id Solicitud Servicio</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Valor Ofrecido</th>
+        <th scope="col">Observaciones</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Estado Servicio</th>
+        <th scope="col">Aceptar</th>
+        <th scope="col">Rechazar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let solicitud of contenido">
+        <td>{{solicitud[0]}}</td>
+        <td>{{solicitud[1]}}</td>
+        <td>{{solicitud[2]}}</td>
+        <td>{{solicitud[3]}}</td>
+        <td>{{solicitud[4]}}</td>
+        <td>{{solicitud[5]}}</td>
+        <td> <a href="#">Aceptar </a></td>
+        <td><a href="#">Rechazar </a></td>
+      </tr>
+  
+    </tbody>
+  </table>
+  
+
+</div>

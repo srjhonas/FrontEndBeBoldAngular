@@ -1,0 +1,49 @@
+<div class="container">
+
+  <h4>Registro de Hacedor</h4>
+
+  <div class="col-md-4">
+    <label class="form-label">Nombre Completo del Hacedor</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa-solid fa-helmet-safety"></i></span>
+      <input type="text" class="form-control" placeholder="Ingrese nombre completo" [(ngModel)]="nombreHacedor" required>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <label class="form-label">Correo Electronico del Hacedor</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa-solid fa-envelope-open-text"></i></span>
+      <input type="text" class="form-control" placeholder="Ingrese correo electronico"  [(ngModel)]="emailHacedor" required>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <label class="form-label">Telefono del Hacedor</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+      <input type="text" class="form-control" placeholder="Ingrese telefono de Contacto" [(ngModel)]="telefonoHacedor" required>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <label class="form-label">Registre su contraseña</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fas fa-key"></i></span>
+      <input type="password" class="form-control" placeholder="Password" [(ngModel)]="passwordHacedor" required>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <label class="form-label">Perfil</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa-solid fa-hand-point-up"></i></span>
+      <input type="password" class="form-control" placeholder="Hacedor" disabled>
+    </div>
+  </div>
+  <br>  
+  <div class="col-12">
+    <button class="btn btn-primary" (click)="insertarHacedor()">Registrarse</button>
+  </div>
+  
+</div>

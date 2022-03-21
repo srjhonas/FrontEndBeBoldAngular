@@ -1,0 +1,102 @@
+<div class="container">
+  <h4>Registro de Solicitud de Servicio</h4>
+
+  <h5 hidden>{{dataService.idUsuario}}</h5>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h5>{{dataService.nombreUsuario}}</h5>
+      </div>
+      <div class="col">
+        <h5>{{dataService.emailUsuario}}</h5>
+      </div>
+      <div class="col">
+        <h5>{{dataService.telefonoUsuario}}</h5>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-12">
+          <div class="col-md-12">
+            <label for="validationDefault04" class="form-label">Departamento</label>
+            <select class="form-select" id="validationDefault04" required (change)="FiltrarXDpto()"
+              [(ngModel)]="DeptoSeleccionado">
+              <option selected disabled value="">Seleccione Dpto...</option>
+              <option *ngFor="let departamento of Depto">{{departamento}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-12">
+          <div class="col-md-12">
+            <label for="validationDefault04" class="form-label">Ciudad</label>
+            <select class="form-select" id="validationDefault04" required [(ngModel)]="CiudadSeleccionada">
+              <option selected disabled value="">Seleccione Ciudad...</option>
+              <option *ngFor="let ciudad of contenido2">{{ciudad.nombre_ciudad}}</option>  
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-3">
+          <span class="input-group-text">Dirección</span>
+          <input type="text" class="form-control" placeholder="Ingresa la direccion donde necesitas el servicio"
+            [(ngModel)]="DireccionServicio">
+        
+        </div>
+            
+      </div>
+      <div class="col">
+        <div class="input-group mb-3">
+          <label class="input-group-text">Barrio</label>
+          <input type="text" class="form-control" placeholder="Ingresa el barrio" [(ngModel)]="BarrioServicio">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-12">
+          <div class="col-md-12">
+            <label for="validationDefault04" class="form-label">Servicio a Solicitar</label>
+            <select class="form-select" id="validationDefault04" required [(ngModel)]="ServicioSeleccionado">
+              <option selected disabled value="">Seleccione un Servicio...</option>
+              <option *ngFor="let servicio of contenido">{{servicio.nombre_tipo_servicio}} </option>        
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+  <label for="validationDefault05" class="form-label">Valor Ofrecido por el Servicio</label>
+  <div class="input-group mb-3">
+    <span class="input-group-text">$</span>
+    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
+      placeholder="Cuanto estas dispuesto a pagar por el servicio" [(ngModel)]="ValorOfrecido">
+    <span class="input-group-text">.00</span>
+  </div>
+      </div>
+    </div>
+  </div>
+  <label for="validationDefault06" class="form-label">Observaciones Adicionales</label>
+  <div class="input-group">
+    <span class="input-group-text">Comentarios</span>
+    <textarea class="form-control" aria-label="With textarea"
+      placeholder="Registra aca las Observaciones que creas que debe saber el Hacedor"
+      [(ngModel)]="Observaciones"></textarea>
+  </div>
+  <br>
+  <button class="btn btn-success" (click)="CrearSolicitudServicio()">
+    <i class="fas fa-file-upload"></i> Solicitar Servicio
+  </button>
+</div>

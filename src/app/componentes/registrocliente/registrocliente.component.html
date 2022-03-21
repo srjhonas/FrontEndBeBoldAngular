@@ -1,0 +1,50 @@
+<div class="container">
+  <h4>Registro de Cliente</h4>
+
+  <div class="col-md-4">
+    <label class="form-label">Nombre Completo del Cliente</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
+      <input type="text" class="form-control" placeholder="Ingrese su nombre completo" [(ngModel)]="nombreCliente" required>
+    </div>
+
+
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Correo Electronico del Cliente</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa-solid fa-envelope-open-text"></i></span>
+      <input type="text" class="form-control" placeholder="Registre su correo electrónico" [(ngModel)]="emailCliente" required>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Telefono del Cliente</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+      <input type="text" class="form-control" placeholder="Registre su telefono de Contacto" [(ngModel)]="telefonoCliente" required>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Registre su contraseña</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fas fa-key"></i></span>
+      <input type="password" class="form-control" placeholder="Password" [(ngModel)]="passwordCliente" required>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <label class="form-label">Perfil</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa-solid fa-hand-point-up"></i></span>
+      <input type="password" class="form-control" placeholder="Cliente" disabled>
+    </div>
+  </div>
+<br>
+  <div class="col-12">
+    <button class="btn btn-primary" (click)="insertarCliente()">Registrarse</button>
+  </div>
+
+</div>

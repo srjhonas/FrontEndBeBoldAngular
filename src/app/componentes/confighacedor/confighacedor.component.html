@@ -1,0 +1,126 @@
+<h4 style="text-align: center">Configura los Servicios que realizas</h4>
+<h5 hidden>{{dataService.idUsuario}}</h5>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h5>{{dataService.nombreUsuario}}</h5>
+    </div>
+    <div class="col">
+
+      <h5>{{dataService.emailUsuario}}</h5>
+    </div>
+    <div class="col">
+
+      <h5>{{dataService.telefonoUsuario}}</h5>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Servicios que realizas</h3>
+      <button type="button" (click)="cargarServiciosHacedor()">CargarServicios</button>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Servicio</th>
+            <th scope="col">Cobro por Servicio</th>
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let servicio of contenido6">
+          <tr scope="row">
+            <td>{{servicio[0]}} </td>
+            <td>{{servicio[1]}} </td>
+            <td>{{servicio[2]}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+      <div class="input-group mb-3">
+        <div class="col-md-4">
+          <label for="validationDefault04" class="form-label">Servicio a Adicionar</label>
+        </div>
+        <div class="col-md-6">
+          <select class="form-select" id="validationDefault04" [(ngModel)]="servicioAgregar" required>
+            <option selected disabled value="">Seleccione un Servicio...</option>
+            <option *ngFor="let servicio of contenido; let i = index">{{servicio.nombre_tipo_servicio}}</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="input-group mb-4">
+        <div class="col-md-5">
+          <label for="validationDefault05" class="form-label">Valor Cobrado por el Servicio</label>
+        </div>
+
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
+          placeholder="Cuanto cobras por la realizacion del servicio" [(ngModel)]="valorXServicio">
+        <span class="input-group-text">.00</span>
+      </div>
+      <button type="button" class="btn btn-success" (click)="AdicionarServicio()">Adicionar Servicio</button>
+
+    </div>
+    <div class="col">
+
+      <h3>Ciudades en las que prestas tus servicios</h3>
+      <button type="button" (click)="cargarCiudades()">CargarCItyus</button>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Departamento</th>
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let city of contenido5">
+          <tr scope="row">
+            <td>{{city[0]}} </td>
+            <td>{{city[1]}} </td>
+            <td>{{city[2]}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="input-group mb-6">
+        <div class="col-md-3">
+          <label for="validationDefault04" class="form-label">Departamento</label>
+
+        </div>
+        <div class="col-md-6">
+          <select class="form-select" id="validationDefault04" required (change)="FiltrarXDpto()"
+            [(ngModel)]="DeptoSeleccionado">
+            <option selected disabled value="">Seleccione Dpto...</option>
+            <option *ngFor="let departamento of Depto">{{departamento}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-group mb-6">
+        <div class="col-md-2">
+          <label for="validationDefault04" class="form-label">Ciudad</label>
+        </div>
+        <div class="col-md-6">
+          <select class="form-select" id="validationDefault04" required [(ngModel)]="CiudadSeleccionada">
+            <option selected disabled value="">Seleccione Ciudad...</option>
+            <option *ngFor="let ciudad of contenido2">{{ciudad.nombre_ciudad}}</option>
+          </select>
+
+        </div>
+
+      </div>
+
+      <button type="button" class="btn btn-success" (click)="AdicionarCiudad()">Adicionar Ciudad de Cobertura</button>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<h1 style="text-align: center">Semillero BeBold</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <br><br> <br> <br> 
+      <label>Registrate como cliente para solicitar nuestros servicios</label>
+      <br>
+      <button type="button" class="btn btn-primary" (click)="GoRegistroCliente()">Registro Cliente</button>
+      <br> <br>
+      <label>Registra tus habilidades como Hacedor y ofrece tus servicios</label>
+      <button type="button" class="btn btn-info" (click)="GoRegistroHacedor()">Registro Hacedor</button>
+    </div>
+    <div class="col">
+      <div class="Login">
+        <div class="container">
+          <div class="card">
+            <div class="flex">
+              <div class="container">
+                <h4 style="text-align: center" class="display-6">Ya estas Registrado?</h4>
+                <h3>Selecciona tu perfil e ingresa Aqui</h3>
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-envelope"></i>Email</span>
+                  <input type="text" class="form-control" placeholder="CorreoElectronico" aria-label="CorreoElectronico"
+                    aria-describedby="addon-wrapping" [(ngModel)]="mailUser">
+                </div>
+                <br>
+                <div class="input-group flex-nowrap">
+                  <span class="input-group-text" id="addon-wrapping"><i class="fas fa-key"></i>Contraseña</span>
+                  <input type="password" class="form-control" placeholder="Password" aria-label="Username"
+                    aria-describedby="addon-wrapping" [(ngModel)]="passUser">
+                </div>
+                <br>
+                <div class="card">
+                  <div class="input-group mb-6">
+                    <div class="col-md-4">
+                      <label for="validationDefault04" class="form-label">Seleccione Perfil</label>
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="validationDefault04" required [(ngModel)]="perfilSeleccionado">
+                        <option selected disabled value="">Seleccione Perfil...</option>
+                        <option>Cliente</option>
+                        <option>Hacedor</option>
+                        <option>Admin</option>
+                      </select>
+
+                    </div>
+
+                  </div>
+                </div>
+                <br>
+                <div class="text-center">
+                  <button type="button" class="btn btn-primary" (click)="validarLogin()">
+                    Iniciar Sesion
+                  </button>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

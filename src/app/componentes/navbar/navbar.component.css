@@ -1,0 +1,16 @@
+.navbar {
+    
+    background: linear-gradient(to bottom, #05293a, #05293a,  #000000);
+    color: #fff;
+    
+    
+}
+
+
+a {
+    color: rgb(252, 252, 252);
+    
+    font-size: 16px;
+    position: relative;
+    font-weight: lighter;
+}

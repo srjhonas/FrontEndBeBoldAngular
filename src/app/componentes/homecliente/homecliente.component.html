@@ -1,0 +1,41 @@
+<br>
+<div class="container">
+
+  <h4>Panel Cliente</h4>
+
+<button type="button" class="btn btn-success" (click)="GoRegistrarServicio()">Registrar Servicio</button>
+
+<h3>Solicitudes de Servicio Registradas</h3>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th class="ColumnTitle" scope="col">ID Solicitud de Servicio</th>
+      <th class="ColumnTitle" scope="col">Estado Solicitud</th>
+      <th class="ColumnTitle" scope="col">Direccion</th>
+      <th class="ColumnTitle" scope="col">Tipo Servicio</th>
+      <th class="ColumnTitle" scope="col">Hacedor</th>
+      <th class="ColumnTitle" scope="col">Ciudad Servicio</th>
+      <th class="ColumnTitle" scope="col">Valor Ofrecido</th>
+      <th class="ColumnTitle" scope="col">Observaciones</th>
+      <th class="ColumnTitle" scope="col">Completada</th>
+      <th class="ColumnTitle" scope="col">Cancelar</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let solicitud of contenido">
+    <tr>
+      <td>{{solicitud[0]}}</td>
+      <td>{{solicitud[1]}}</td>
+      <td>{{solicitud[2]}}</td>
+      <td>{{solicitud[3]}}</td>
+      <td>{{solicitud[5]}}</td>
+      <td>{{solicitud[6]}}</td>
+      <td>{{solicitud[7]}}</td>
+      <td>{{solicitud[8]}}</td>
+        <td ><button type="button" class="btn btn-success">Marcar Finalizada</button></td>
+        <td ><button type="button" class="btn btn-danger">Cancelar Servicio</button></td>
+      
+    </tr>
+
+  </tbody>
+</table>
+</div>
