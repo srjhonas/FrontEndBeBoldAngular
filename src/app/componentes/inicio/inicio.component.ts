@@ -45,14 +45,14 @@ export class InicioComponent implements OnInit {
         this.contenido = [];
       }
       setTimeout(() => {
-        console.log('Aca demorado');
+        
         let passcorrecto = this.contenido[0].password_cliente;
-        console.log(passcorrecto);
+        
         if (this.passUser === passcorrecto) {
-          console.log('Acceso OK');
+          
           this.router.navigate(['/HomeCliente']);
         } else {
-          console.log('Usuario o Password Errados');
+          
           window.location.reload();
         }
         this.dataService.idUsuario = this.contenido[0].id_cliente;
@@ -81,14 +81,14 @@ export class InicioComponent implements OnInit {
         this.contenido = [];
       }
       setTimeout(() => {
-        console.log('Aca demorado');
+        
         let passcorrecto = this.contenido[0].password_hacedor;
-        console.log(passcorrecto);
+        
         if (this.passUser === passcorrecto) {
-          console.log('Acceso OK');
+          
           this.router.navigate(['/HomeHacedor']);
         } else {
-          console.log('Usuario o Password Errados');
+          
           window.location.reload();
         }
         this.dataService.idUsuario = this.contenido[0].id_hacedor;

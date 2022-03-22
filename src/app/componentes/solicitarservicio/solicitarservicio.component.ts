@@ -69,7 +69,7 @@ export class SolicitarservicioComponent implements OnInit {
       this.res2 = this.objetohttp.get(this.urlapiGET2 + this.DeptoSeleccionado);
       this.res2.subscribe((datos2: any[]) => {
         this.contenido2 = datos2;
-        //console.log(this.contenido2);
+        
       });
     } catch (e) {
       console.error('BK DOWN');
@@ -102,21 +102,13 @@ export class SolicitarservicioComponent implements OnInit {
     }
     for (let i = 0; i < datostraidosServ.length; i++) {
       let variableServ2 = datostraidosServ[i].nombre_tipo_servicio;
-      console.log(variableServ + "vs la normal" + variableServ2);
-      console.log(variableServ == variableServ2);
+
       if (variableServ == variableServ2) {
         indicedefServ = i;
         break;
       }
     }
     let idTipoServicio = datostraidosServ[indicedefServ].id_tipo_servicio;
-    
-    console.log(
-      'este es el id que esta registrando' +
-        idTipoServicio +
-        'este el indice' +
-        indicedefServ
-    );
 
     //definiendo el id de la ciudad
     let variableCity = this.CiudadSeleccionada;
@@ -127,7 +119,7 @@ export class SolicitarservicioComponent implements OnInit {
     }
     for (let i = 0; i < datostraidosCity.length; i++) {
       let variableCity2 = datostraidosCity[i].nombre_ciudad;
-      console.log(variableCity == variableCity2);
+     
       if (variableCity == variableCity2) {
         indicedefCity = i;
         break;
@@ -173,7 +165,7 @@ export class SolicitarservicioComponent implements OnInit {
         this.resNumSolicitud = this.objetohttp.get(this.urlapiGETNumSolicitud);
         this.resNumSolicitud.subscribe((datosNum: any[]) => {
           this.contenidoNumSolicitud = datosNum;
-          console.log(this.contenidoNumSolicitud);
+        
         });
       } catch (e) {
         console.error('BK DOWN');
@@ -183,20 +175,12 @@ export class SolicitarservicioComponent implements OnInit {
  //asignar variable con el numero de Solicitud de servicio
       setTimeout(() => {
         this.numSolServicio = this.contenidoNumSolicitud;
-        console.log(this.numSolServicio);
-        console.log('Inicio de Traer Hacedores Aptos');
+     
       }, 3000);
       //llamar al Back traer listado de hacedores Aptos
 
       setTimeout(() => {
-        console.log(
-          this.urlapiGETAptos +
-            idCity +
-            '&' +
-            idTipoServicio +
-            '&' +
-            this.ValorOfrecido
-        );
+    
         try {
           this.resAptos = this.objetohttp.get(
             this.urlapiGETAptos +
@@ -208,7 +192,7 @@ export class SolicitarservicioComponent implements OnInit {
           );
           this.resAptos.subscribe((datosAptos: any[]) => {
             this.contenidoAptos = datosAptos;
-            console.log(this.contenidoAptos);
+            
           });
         } catch (e) {
           console.error('BK DOWN');
@@ -222,14 +206,11 @@ export class SolicitarservicioComponent implements OnInit {
           datosAptos2.push(ddato);
         }
 
-        console.log("num de solicitud de servicios" + this.numSolServicio)
+      
 
         for (let x = 0; x < datosAptos2.length; x++) {
           let Apto1 = datosAptos2[x];
-          console.log(Apto1);
-          console.log(" ciudad:" + idCity + "cliente" + this.dataService.idUsuario +
-          "Hacedor Apto" + Apto1[0] + " ID SOL SERV" + this.numSolServicio + "Contenido NumSolicitud" + this.contenidoNumSolicitud +
-          "id tipo servivivio" + idTipoServicio);
+        
           this.objetohttp
             .post(
               this.urlapiPOSTListado,
@@ -267,7 +248,7 @@ export class SolicitarservicioComponent implements OnInit {
       this.res = this.objetohttp.get(this.urlapiGET);
       this.res.subscribe((datos: any[]) => {
         this.contenido = datos;
-        console.log(this.contenido);
+        
       });
     } catch (e) {
       console.error('BK DOWN');

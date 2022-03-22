@@ -25,7 +25,7 @@ export class HomeclienteComponent implements OnInit {
       this.res = this.objetohttp.get(this.urlapiGET+this.dataService.idUsuario);
       this.res.subscribe((datos: any[]) => {
         this.contenido = datos;
-        console.log(this.contenido);
+        
       });
     } catch (e) {
       console.error('BK DOWN');

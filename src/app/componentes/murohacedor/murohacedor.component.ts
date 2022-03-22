@@ -37,14 +37,14 @@ export class MurohacedorComponent implements OnInit {
       }
     );
     setTimeout(()=>{
-      console.log("este es el code put" + this.codeput)
+      
       this.objetohttp.delete(this.urlapiDELETE + codigoServicio, {
         observe: 'response'
       }).subscribe(
         (response: any) => {
   
           this.codedelete = response.status;
-          console.log(this.codedelete);
+          
         }
       );
     },500)
@@ -58,7 +58,7 @@ export class MurohacedorComponent implements OnInit {
       this.res = this.objetohttp.get(this.urlapiGET+this.dataService.idUsuario);
       this.res.subscribe((datos: any[]) => {
         this.contenido = datos;
-        console.log(this.contenido);
+        
       });
     } catch (e) {
       console.error('BK DOWN');

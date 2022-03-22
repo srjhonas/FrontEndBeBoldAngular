@@ -34,7 +34,7 @@ export class ConfighacedorComponent implements OnInit {
       this.res2 = this.objetohttp.get(this.urlapiGET2 + this.DeptoSeleccionado);
       this.res2.subscribe((datos2: any[]) => {
         this.contenido2 = datos2;
-        console.log(this.contenido2);
+     
       });
     } catch (e) {
       console.error('BK DOWN');
@@ -57,7 +57,7 @@ export class ConfighacedorComponent implements OnInit {
     }
     for (let i = 0; i < datostraidos.length; i++) {
       let variable1 = datostraidos[i].nombre_tipo_servicio;
-      console.log(variable1 == variable);
+      
       if (variable1 == variable) {
         indicedef = i;
         break;
@@ -82,7 +82,7 @@ export class ConfighacedorComponent implements OnInit {
         
       }
     );
-    console.log(indicedef);
+  
   }
 
   //Registrar Nueva Ciudad de Cobertura
@@ -98,7 +98,7 @@ export class ConfighacedorComponent implements OnInit {
     }
     for (let i = 0; i < datostraidosCity.length; i++) {
       let variableCity2 = datostraidosCity[i].nombre_ciudad;
-      console.log(variableCity == variableCity2);
+      
       if (variableCity == variableCity2) {
         indicedefCity = i;
         break;
@@ -121,7 +121,7 @@ export class ConfighacedorComponent implements OnInit {
         
       }
     );
-    console.log(indicedefCity);
+    
   }
 
   //Cargar el listado de Ciudades de cobertura que tiene un Hacedor
@@ -134,7 +134,7 @@ export class ConfighacedorComponent implements OnInit {
       this.res5 = this.objetohttp.get(this.urlapiGET5+this.dataService.idUsuario);
       this.res5.subscribe((datos: any[]) => {
         this.contenido5 = datos;
-        console.log(this.contenido5);
+        
       
       });
     } catch (e) {
@@ -152,7 +152,7 @@ export class ConfighacedorComponent implements OnInit {
       this.res6 = this.objetohttp.get(this.urlapiGET6+this.dataService.idUsuario);
       this.res6.subscribe((datos: any[]) => {
         this.contenido6 = datos;
-        console.log(this.contenido6);
+        
       
       });
     } catch (e) {
@@ -172,7 +172,7 @@ urlapiGET: string = 'http://localhost:8080/api/TipoServicio';
       this.res = this.objetohttp.get(this.urlapiGET);
       this.res.subscribe((datos: any[]) => {
         this.contenido = datos;
-        console.log(this.contenido);
+       
       });
     } catch (e) {
       console.error('BK DOWN');
