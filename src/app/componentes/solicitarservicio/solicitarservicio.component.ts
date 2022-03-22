@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -82,7 +83,7 @@ export class SolicitarservicioComponent implements OnInit {
   resNumSolicitud: any;
   contenidoNumSolicitud: any;
   urlapiGETNumSolicitud: string = 'http://localhost:8080/api/numSolicitud';
-  numSolServicio: any;
+  numSolServicio!: number;
 
   resAptos: any;
   contenidoAptos: any;
@@ -178,13 +179,13 @@ export class SolicitarservicioComponent implements OnInit {
         console.error('BK DOWN');
         this.contenidoNumSolicitud = [];
       }
-    }, 500);
+    }, 1500);
  //asignar variable con el numero de Solicitud de servicio
       setTimeout(() => {
         this.numSolServicio = this.contenidoNumSolicitud;
         console.log(this.numSolServicio);
         console.log('Inicio de Traer Hacedores Aptos');
-      }, 1000);
+      }, 3000);
       //llamar al Back traer listado de hacedores Aptos
 
       setTimeout(() => {
@@ -213,7 +214,7 @@ export class SolicitarservicioComponent implements OnInit {
           console.error('BK DOWN');
           this.contenidoAptos = [];
         }
-      }, 1500);
+      }, 4500);
       //Cargar Listado de Hacedores Aptos
       setTimeout(() => {
         let datosAptos2 = Array();
@@ -221,11 +222,14 @@ export class SolicitarservicioComponent implements OnInit {
           datosAptos2.push(ddato);
         }
 
-        
+        console.log("num de solicitud de servicios" + this.numSolServicio)
 
         for (let x = 0; x < datosAptos2.length; x++) {
           let Apto1 = datosAptos2[x];
           console.log(Apto1);
+          console.log(" ciudad:" + idCity + "cliente" + this.dataService.idUsuario +
+          "Hacedor Apto" + Apto1[0] + " ID SOL SERV" + this.numSolServicio + "Contenido NumSolicitud" + this.contenidoNumSolicitud +
+          "id tipo servivivio" + idTipoServicio);
           this.objetohttp
             .post(
               this.urlapiPOSTListado,
@@ -236,7 +240,7 @@ export class SolicitarservicioComponent implements OnInit {
                 estado_sol_serv: 1,
                 hacedor: 39,
                 hacedor_apto: Apto1[0],
-                id_sol_serv: this.numSolServicio,
+                idsolserv: this.numSolServicio,
                 observaciones: this.Observaciones,
                 tipo_servicio: idTipoServicio,
                 valor_ofrecido: this.ValorOfrecido,
@@ -249,8 +253,9 @@ export class SolicitarservicioComponent implements OnInit {
               this.codepostListado = response.status;
             });
         }
-      }, 2000);
-      this.router.navigate(['/HomeCliente']);
+        this.router.navigate(['/HomeCliente']);
+      }, 6000);
+      
   }
 
   res: any;

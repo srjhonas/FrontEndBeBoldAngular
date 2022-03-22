@@ -15,6 +15,43 @@ export class MurohacedorComponent implements OnInit {
   res: any;
   contenido: any;
   urlapiGET: string = 'http://localhost:8080/api/MuroSolicitudes/';
+
+  urlapiPUT: string = 'http://localhost:8080/api/aceptarSolicitud/';
+  codeput!: number;
+
+  urlapiDELETE: string = 'http://localhost:8080/api/HacedoresAptosLimpiar/';
+  codedelete!: number;
+
+  AceptarServicio(codigoServicio: number){
+    this.objetohttp.put(this.urlapiPUT + codigoServicio,
+      {
+        "estado_sol_serv": 3,
+        "hacedor": this.dataService.idUsuario
+        
+      }, {
+      observe: 'response'
+    }).subscribe(
+      (response: any) => {
+        this.codeput = response.status;
+        
+      }
+    );
+    setTimeout(()=>{
+      console.log("este es el code put" + this.codeput)
+      this.objetohttp.delete(this.urlapiDELETE + codigoServicio, {
+        observe: 'response'
+      }).subscribe(
+        (response: any) => {
+  
+          this.codedelete = response.status;
+          console.log(this.codedelete);
+        }
+      );
+    },500)
+    
+  }
+
+
   ngOnInit(): void {
 
     try {

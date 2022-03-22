@@ -1,3 +1,8 @@
 .ColumnTitle{
     font-size: 12px;
 }
+
+.btn{
+    background-color: #05293a;
+    color: white;
+}

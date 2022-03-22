@@ -10,6 +10,6 @@ export class DataService {
   emailUsuario:string = "Sin Nombre..."
   telefonoUsuario:string = "Sin Nombre..."
   tipoUsuario:string = "Sin Nombre..."
-  
+  Perfil:number = 0;
   constructor() { }
 }

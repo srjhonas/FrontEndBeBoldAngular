@@ -6,6 +6,7 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { MurohacedorComponent } from './componentes/murohacedor/murohacedor.component';
 import { RegistroclienteComponent } from './componentes/registrocliente/registrocliente.component';
 import { RegistrohacedorComponent } from './componentes/registrohacedor/registrohacedor.component';
+import { ServiciosAsignadosComponent } from './componentes/servicios-asignados/servicios-asignados.component';
 import { SolicitarservicioComponent } from './componentes/solicitarservicio/solicitarservicio.component';
 
 const routes: Routes = [
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path:'SolicitarServicio',
     component:SolicitarservicioComponent
+  },
+  {
+    path:'ServiciosAsignados',
+    component:ServiciosAsignadosComponent
   }
 
 ];

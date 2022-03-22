@@ -1,17 +1,17 @@
 <div class="container">
-  <h4>Registro de Solicitud de Servicio</h4>
+  <h4 style="text-align: center">Registro de Solicitud de Servicio</h4>
 
   <h5 hidden>{{dataService.idUsuario}}</h5>
   <div class="container">
     <div class="row">
       <div class="col">
-        <h5>{{dataService.nombreUsuario}}</h5>
+        <h5 style="text-align: center">{{dataService.nombreUsuario}}</h5>
       </div>
       <div class="col">
-        <h5>{{dataService.emailUsuario}}</h5>
+        <h5 style="text-align: center"><i class="fa-solid fa-envelope"></i>{{dataService.emailUsuario}}</h5>
       </div>
       <div class="col">
-        <h5>{{dataService.telefonoUsuario}}</h5>
+        <h5 style="text-align: center"><i class="fa-solid fa-phone"></i>{{dataService.telefonoUsuario}}</h5>
       </div>
     </div>
   </div>
@@ -96,7 +96,8 @@
       [(ngModel)]="Observaciones"></textarea>
   </div>
   <br>
-  <button class="btn btn-success" (click)="CrearSolicitudServicio()">
+  <button class="btn" (click)="CrearSolicitudServicio()">
     <i class="fas fa-file-upload"></i> Solicitar Servicio
   </button>
+  
 </div>

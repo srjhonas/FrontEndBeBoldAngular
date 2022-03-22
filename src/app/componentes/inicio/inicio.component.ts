@@ -60,9 +60,16 @@ export class InicioComponent implements OnInit {
         this.dataService.emailUsuario = this.contenido[0].emailCliente;
         this.dataService.telefonoUsuario = this.contenido[0].telefono_cliente;
         this.dataService.tipoUsuario = this.contenido[0].tipo_usuario;
+        if(this.dataService.tipoUsuario == "Cliente"){
+          this.dataService.Perfil = 1
+        }else if(this.dataService.tipoUsuario == "Hacedor"){
+          this.dataService.Perfil = 2
+        }else{
+          this.dataService.Perfil = 3
+        }
         
 
-      }, 1500);
+      }, 500);
     }else{
       try {
         this.res = this.objetohttp.get(this.urlapiHacedores + this.mailUser);
@@ -90,10 +97,20 @@ export class InicioComponent implements OnInit {
         this.dataService.telefonoUsuario = this.contenido[0].telefono_hacedor;
         this.dataService.tipoUsuario = this.contenido[0].tipo_usuario;
 
+        if(this.dataService.tipoUsuario == "Cliente"){
+          this.dataService.Perfil = 1
+        }else if(this.dataService.tipoUsuario == "Hacedor"){
+          this.dataService.Perfil = 2
+        }else{
+          this.dataService.Perfil = 3
+        }
+       
 
-      }, 1500);
+      }, 500);
     }
+   
     
+
   }
 
   ngOnInit(): void {}

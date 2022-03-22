@@ -1,0 +1,52 @@
+<div class="container">
+
+    <h4 style="text-align: center">Panel Hacedor - Servicios Asignados</h4>
+    <h5 hidden>{{dataService.idUsuario}}</h5>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h5 style="text-align: center">{{dataService.nombreUsuario}}</h5>
+        </div>
+        <div class="col">
+    
+          <h5 style="text-align: center"><i class="fa-solid fa-envelope"></i>{{dataService.emailUsuario}}</h5>
+        </div>
+        <div class="col">
+    
+          <h5 style="text-align: center"><i class="fa-solid fa-phone"></i>{{dataService.telefonoUsuario}}</h5>
+        </div>
+      </div>
+    </div>
+    
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id Solicitud Servicio</th>
+          <th scope="col">Estado Servicio</th>
+          <th scope="col">Tipo de Servicio</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Valor Ofrecido</th>
+          <th scope="col">Observaciones</th>
+          <th scope="col">Check</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let solicitud of contenido">
+          <td>{{solicitud[0]}}</td>
+          <td>{{solicitud[1]}}</td>
+          <td>{{solicitud[3]}}</td>
+          <td> {{solicitud[2]}} <br>  {{solicitud[9]}} <br> {{solicitud[10]}} <br> {{solicitud[11]}}</td>
+          <td>{{solicitud[5]}}</td>
+          <td>{{solicitud[6]}}</td>
+          <td>{{solicitud[7]}}</td>
+          <td> <button class="btn btn-sm" type="button">Marcar como Finalizada</button></td>
+          
+        </tr>
+    
+      </tbody>
+    </table>
+    
+  
+  </div>
+  

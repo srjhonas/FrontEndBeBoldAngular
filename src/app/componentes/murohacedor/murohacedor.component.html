@@ -1,24 +1,25 @@
 <div class="container">
 
-  <h4>Panel Hacedor - Muro de Solicitudes</h4>
+  <h4 style="text-align: center">Panel Hacedor - Muro de Solicitudes</h4>
   <h5 hidden>{{dataService.idUsuario}}</h5>
   <div class="container">
     <div class="row">
       <div class="col">
-        <h5>{{dataService.nombreUsuario}}</h5>
+        <h5 style="text-align: center">{{dataService.nombreUsuario}}</h5>
       </div>
       <div class="col">
   
-        <h5>{{dataService.emailUsuario}}</h5>
+        <h5 style="text-align: center"><i class="fa-solid fa-envelope"></i>{{dataService.emailUsuario}}</h5>
       </div>
       <div class="col">
   
-        <h5>{{dataService.telefonoUsuario}}</h5>
+        <h5 style="text-align: center"><i class="fa-solid fa-phone"></i>{{dataService.telefonoUsuario}}</h5>
       </div>
     </div>
   </div>
+
   
-  <table class="table">
+  <table class="table table-dark table-striped">
     <thead>
       <tr>
         <th scope="col">Id Solicitud Servicio</th>
@@ -39,8 +40,8 @@
         <td>{{solicitud[3]}}</td>
         <td>{{solicitud[4]}}</td>
         <td>{{solicitud[5]}}</td>
-        <td> <a href="#">Aceptar </a></td>
-        <td><a href="#">Rechazar </a></td>
+        <td><button type="button" class="btn btn-primary" (click)="AceptarServicio(solicitud[0])">Aceptar</button></td>
+        <td><button type="button" class="btn btn-danger">Rechazar</button></td>
       </tr>
   
     </tbody>

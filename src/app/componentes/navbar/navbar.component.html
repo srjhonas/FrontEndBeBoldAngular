@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-sm"  >
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><i class="fa-solid fa-arrow-up-right-dots"></i>Semillero BeBold</a>
+      <a class="navbar-brand" (click)="actualizarNavBar()"><i class="fa-solid fa-arrow-up-right-dots"></i>Semillero BeBold</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,28 +10,31 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" [routerLink]="'Home'"><i class="fa-solid fa-house-user"></i>Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="Estado==1">
             <a class="nav-link active" aria-current="page" [routerLink]="'HomeCliente'"><i class="fas fa-walking"></i> Clientes</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="'HomeHacedor'"><i class="fa-solid fa-helmet-safety"></i>Hacedores</a>
+          <li class="nav-item" *ngIf="Estado==2">
+            <a class="nav-link active" aria-current="page" [routerLink]="'HomeHacedor'"><i class="fa-solid fa-helmet-safety"></i>Muro de Solicitudes</a>
           </li>
           
          
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="Estado==1">
             <a class="nav-link active" aria-current="page" [routerLink]="'SolicitarServicio'"><i class="fa-solid fa-user-plus"></i> Registrar Solicitud Servicio</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="Estado==2">
             <a class="nav-link active" aria-current="page" [routerLink]="'Hacedor/Configuracion'"><i class="fa-solid fa-gears"></i> Editar Preferencias Hacedor</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="Estado==3">
             <a class="nav-link active" aria-current="page" [routerLink]="'RegistroCliente'" ><i class="fas fa-walking"></i> + Registrar Cliente</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="Estado==3">
             <a class="nav-link active" aria-current="page" [routerLink]="'RegistroHacedor'" ><i class="fa-solid fa-helmet-safety"></i> + Registrar Hacedor</a>
           </li>
-         
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="Estado==2">
+            <a class="nav-link active" aria-current="page" [routerLink]="'ServiciosAsignados'" ><i class="fa-solid fa-hand-point-up"></i> Servicios Asignados</a>
+          </li>
+
+          <li class="nav-item"  *ngIf="Estado==2 || Estado==1">
             <a class="nav-link active" aria-current="page" [routerLink]="'Home'"><i class="fas fa-power-off"></i>LogOff</a>
           </li>
           

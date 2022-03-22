@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MurohacedorComponent } from './componentes/murohacedor/murohacedor.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { ServiciosAsignadosComponent } from './componentes/servicios-asignados/servicios-asignados.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FooterComponent } from './componentes/footer/footer.component';
     HomeclienteComponent,
     MurohacedorComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ServiciosAsignadosComponent
   ],
   imports: [
     BrowserModule,
