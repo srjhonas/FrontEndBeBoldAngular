@@ -14,6 +14,7 @@ import { MurohacedorComponent } from './componentes/murohacedor/murohacedor.comp
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { ServiciosAsignadosComponent } from './componentes/servicios-asignados/servicios-asignados.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { ServiciosAsignadosComponent } from './componentes/servicios-asignados/s
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

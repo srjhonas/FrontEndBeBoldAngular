@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <br><br> <br> <br> 
+      <br><br> <br> <br>
       <label>Registrate como cliente para solicitar nuestros servicios</label>
       <br>
       <button type="button" class="btn" (click)="GoRegistroCliente()">Registro Cliente</button>
@@ -17,18 +17,19 @@
           <div class="card">
             <div class="flex">
               <div class="container">
+
                 <h4 style="text-align: center" class="display-6">Ya estas Registrado?</h4>
                 <h3>Selecciona tu perfil e ingresa Aqui</h3>
                 <div class="input-group flex-nowrap">
                   <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-envelope"></i>Email</span>
                   <input type="text" class="form-control" placeholder="CorreoElectronico" aria-label="CorreoElectronico"
-                    aria-describedby="addon-wrapping" [(ngModel)]="mailUser">
+                    aria-describedby="addon-wrapping" [(ngModel)]="mailUser" required>
                 </div>
                 <br>
                 <div class="input-group flex-nowrap">
                   <span class="input-group-text" id="addon-wrapping"><i class="fas fa-key"></i>Contraseña</span>
                   <input type="password" class="form-control" placeholder="Password" aria-label="Username"
-                    aria-describedby="addon-wrapping" [(ngModel)]="passUser">
+                    aria-describedby="addon-wrapping" [(ngModel)]="passUser" required>
                 </div>
                 <br>
                 <div class="card">
@@ -54,6 +55,14 @@
                     Iniciar Sesion
                   </button>
                   <br>
+                  <div *ngIf="Acceso==1" class="alert alert-danger animate__animated animate__bounceInLeft"
+                    role="alert">
+                    Usuario o Password Incorrecto <i class="fa-solid fa-triangle-exclamation"></i>
+                  </div>
+                  <div *ngIf="Acceso==2" class="alert alert-primary animate__animated animate__bounceInLeft"
+                    role="alert">
+                    Por favor diligencie todos los campos <i class="fa-solid fa-triangle-exclamation"></i>
+                  </div>
                 </div>
               </div>
             </div>

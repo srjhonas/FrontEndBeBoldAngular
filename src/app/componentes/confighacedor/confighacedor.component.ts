@@ -82,6 +82,10 @@ export class ConfighacedorComponent implements OnInit {
         
       }
     );
+    setTimeout(() => {
+      this.cargarServiciosHacedor()  
+    }, 1500);
+    
   
   }
 
@@ -121,6 +125,10 @@ export class ConfighacedorComponent implements OnInit {
         
       }
     );
+
+    setTimeout(() => {
+      this.cargarCiudades()  
+    }, 1500);
     
   }
 
@@ -179,16 +187,31 @@ urlapiGET: string = 'http://localhost:8080/api/TipoServicio';
       this.contenido = [];
     }
 
-//    try {
-//      this.res5 = this.objetohttp.get(this.urlapiGET5+this.dataService.idUsuario);
-//     this.res5.subscribe((datos: any[]) => {
-//        this.contenido5 = datos;
-//        console.log(this.contenido5);
-//      });
-//    } catch (e) {
-//      console.error('BK DOWN');
-//      this.contenido5 = [];
-//    }
+    try {
+      this.res6 = this.objetohttp.get(this.urlapiGET6+this.dataService.idUsuario);
+      this.res6.subscribe((datos: any[]) => {
+        this.contenido6 = datos;
+        
+      
+      });
+    } catch (e) {
+      console.error('BK DOWN');
+      this.contenido6 = [];
+    }
+
+    try {
+      this.res5 = this.objetohttp.get(this.urlapiGET5+this.dataService.idUsuario);
+      this.res5.subscribe((datos: any[]) => {
+        this.contenido5 = datos;
+        
+      
+      });
+    } catch (e) {
+      console.error('BK DOWN');
+      this.contenido5 = [];
+    }
+
+
 
   }
 }

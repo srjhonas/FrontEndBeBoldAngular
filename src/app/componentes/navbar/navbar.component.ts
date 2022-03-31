@@ -8,20 +8,18 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class NavbarComponent implements OnInit {
 
+  message!: string;
+  editMessage!: string;
+
   Estado: number = 0;
   
   constructor(public dataService:DataService) { }
-  actualizarNavBar(){
-    if(this.dataService.tipoUsuario == "Cliente"){
-      this.Estado = 1
-    }else if(this.dataService.tipoUsuario == "Hacedor"){
-      this.Estado = 2
-    }else{
-      this.Estado = 3
-    }
-  }
+
 
   ngOnInit(): void {
+
+    this.dataService.customMessage.subscribe(msg => this.message = msg)
+
   
   }
 
