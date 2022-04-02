@@ -234,7 +234,7 @@ export class SolicitarservicioComponent implements OnInit {
               this.codepostListado = response.status;
             });
         }
-        //this.router.navigate(['/HomeCliente']);
+        this.router.navigate(['/HomeCliente']);
       }, 6000);
       
   }
