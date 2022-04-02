@@ -24,7 +24,7 @@ export class RegistrohacedorComponent implements OnInit {
   insertarHacedor() {
     this.objhttp.post(this.urlAPI,
       {
-        "email_hacedor": this.emailHacedor,
+        "emailhacedor": this.emailHacedor,
         "nombre_hacedor": this.nombreHacedor,
         "password_hacedor": this.passwordHacedor,
         "telefono_hacedor": this.telefonoHacedor,
@@ -42,7 +42,7 @@ export class RegistrohacedorComponent implements OnInit {
         
       }
     );
-    this.router.navigate(['/HomeHacedor'])
+    this.router.navigate(['/Home'])
 
   }
   ngOnInit(): void {

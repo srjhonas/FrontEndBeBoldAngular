@@ -24,7 +24,7 @@ export class RegistroclienteComponent implements OnInit {
   insertarCliente() {
     this.objetohttp.post(this.urlAPI,
       {
-        "email_cliente": this.emailCliente,
+        "emailCliente": this.emailCliente,
         "nombre_cliente": this.nombreCliente,
         "password_cliente": this.passwordCliente,
         "telefono_cliente": this.telefonoCliente,
@@ -43,7 +43,7 @@ export class RegistroclienteComponent implements OnInit {
       }
     );
 
-    this.router.navigate(['/HomeCliente'])
+    this.router.navigate(['/Home'])
   }
 
 

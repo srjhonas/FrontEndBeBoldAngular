@@ -21,8 +21,8 @@
       <div class="col">
         <div class="input-group mb-12">
           <div class="col-md-12">
-            <label for="validationDefault04" class="form-label">Departamento</label>
-            <select class="form-select" id="validationDefault04" required (change)="FiltrarXDpto()"
+            <label for="DeptoSelected" class="form-label">Departamento</label>
+            <select class="form-select" id="DeptoSelected" required (change)="FiltrarXDpto()"
               [(ngModel)]="DeptoSeleccionado">
               <option selected disabled value="">Seleccione Dpto...</option>
               <option *ngFor="let departamento of Depto">{{departamento}}</option>
@@ -33,8 +33,8 @@
       <div class="col">
         <div class="input-group mb-12">
           <div class="col-md-12">
-            <label for="validationDefault04" class="form-label">Ciudad</label>
-            <select class="form-select" id="validationDefault04" required [(ngModel)]="CiudadSeleccionada">
+            <label for="CiudadSelected" class="form-label">Ciudad</label>
+            <select class="form-select" id="CiudadSelected" required [(ngModel)]="CiudadSeleccionada">
               <option selected disabled value="">Seleccione Ciudad...</option>
               <option *ngFor="let ciudad of contenido2">{{ciudad.nombre_ciudad}}</option>  
             </select>
@@ -69,8 +69,8 @@
       <div class="col">
         <div class="input-group mb-12">
           <div class="col-md-12">
-            <label for="validationDefault04" class="form-label">Servicio a Solicitar</label>
-            <select class="form-select" id="validationDefault04" required [(ngModel)]="ServicioSeleccionado">
+            <label for="ServicioSelected" class="form-label">Servicio a Solicitar</label>
+            <select class="form-select" id="ServicioSelected" required [(ngModel)]="ServicioSeleccionado">
               <option selected disabled value="">Seleccione un Servicio...</option>
               <option *ngFor="let servicio of contenido">{{servicio.nombre_tipo_servicio}} </option>        
             </select>
